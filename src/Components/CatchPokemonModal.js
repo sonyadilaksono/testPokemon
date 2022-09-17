@@ -11,8 +11,8 @@ export const CatchPokemonModal = forwardRef((props, ref) => {
    const [open, setOpen] = useState(false);
    const [successCatch, isSuccessCatch] = useState('fail');
    const [nickname, setNickname] = useState('');
+   const [sameNick, setSameNick] = useState('');
    const location = useLocation();
-   console.log(location);
 
    const _toogleModal = () => {
       if (!open) {
@@ -33,9 +33,16 @@ export const CatchPokemonModal = forwardRef((props, ref) => {
    const _onSaveToPokebag = () => {
       const getStorage = localStorage.getItem('pokebag');
       const listPokebag = JSON.parse(getStorage) || [];
-      listPokebag.push({ ...location.state, nickname: nickname });
-      localStorage.setItem('pokebag', JSON.stringify(listPokebag));
-      isSuccessCatch('afterSuccess');
+      const sameNickName = listPokebag.find((obj) => {
+         return obj.nickname === nickname;
+      });
+      if (!sameNickName) {
+         listPokebag.push({ ...location.state, nickname: nickname });
+         localStorage.setItem('pokebag', JSON.stringify(listPokebag));
+         isSuccessCatch('afterSuccess');
+      } else {
+         setSameNick('Nickname already exist, use different name');
+      }
    };
 
    const _getContent = () => {
@@ -70,6 +77,9 @@ export const CatchPokemonModal = forwardRef((props, ref) => {
                            value={nickname}
                            prefix={<UserOutlined />}
                         />
+                        <Title level={5} className="nickExist">
+                           {sameNick}
+                        </Title>
                         <Button
                            type="primary"
                            size="large"
@@ -82,6 +92,7 @@ export const CatchPokemonModal = forwardRef((props, ref) => {
                   </div>
                </>
             );
+
          case 'afterSuccess':
             return (
                <>
@@ -104,6 +115,8 @@ export const CatchPokemonModal = forwardRef((props, ref) => {
                   </div>
                </>
             );
+         default:
+            return <></>;
       }
    };
 

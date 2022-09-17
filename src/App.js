@@ -1,5 +1,5 @@
-import Layout, { Content, Footer } from 'antd/lib/layout/layout';
-import React, { useState } from 'react';
+import Layout, { Content } from 'antd/lib/layout/layout';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.less';
 import { Headers } from './Components/Header/Header';

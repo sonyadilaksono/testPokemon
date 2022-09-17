@@ -27,6 +27,7 @@ const Pokedex = (props) => {
 
    useEffect(() => {
       fetchPokemons(getParams(pokedex.offset));
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
 
    const onLoadMore = () => {

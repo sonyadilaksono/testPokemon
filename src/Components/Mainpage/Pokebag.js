@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import PokeImage from './PokeImage';
 const { Title, Text } = Typography;
 
-export const Pokebag = (props) => {
+export const Pokebag = () => {
    const [items, setItems] = useState([]);
    const gridStyle = {
       width: '100%',

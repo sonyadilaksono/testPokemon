@@ -16,6 +16,7 @@ const PokeImage = (props) => {
          setImage(response.data.sprites.front_default);
       };
       fetchData();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
    return <Image src={image} width={100} height={100} preview={false} />;
 };

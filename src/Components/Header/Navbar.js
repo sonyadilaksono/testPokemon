@@ -6,12 +6,7 @@ export const Navbar = () => {
    const [size] = useState('large');
    return (
       <>
-         <Row
-            type={'flex'}
-            justify={'space-between'}
-            gutter={24}
-            className="m-t-sm"
-         >
+         <Row type={'flex'} justify={'space-between'} gutter={24}>
             <Link to="/">
                <Button type="primary" size={size}>
                   Home
