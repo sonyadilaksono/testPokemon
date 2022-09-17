@@ -1,0 +1,413 @@
+@import "./font.less";
+@import "./login.less";
+@import "../../../node_modules/antd/dist/antd.less";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  StyleSheet Documentation
+  1. Declaring Variable
+    1.1   Base Scaffolding Variables
+    1.2   Colors
+    1.3   Border Color
+    1.4   Form
+    1.5   Input
+    1.6   Select
+    1.7   Checkbox
+    1.8   Radio
+    1.9   Buttons
+    1.10  PageHeader
+    1.11  Collapse
+    1.12  Card
+    1.13  Layout
+    1.14  Global
+  2. Components
+    2.1   Login
+  3. Antd
+    3.1   Layout
+    3.2   Input
+    3.3   Button
+    3.4   Checkbox
+    3.5   Select
+    3.6   Card
+    3.7   Collapse
+  4. UI
+    4.1   Card
+    4.1.1 Card Choose
+  5. Responsive
+    5.1   Home
+    5.2   Ads
+*/
+
+// 1. Declaring Variable
+// 1.1 Base Scaffolding Variables
+@heading-color: #262626;
+@font-size-base: 16px;
+@text-color: @heading-color;
+@border-radius-base: 4px;
+@font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Lato,
+   "Helvetica Neue", Arial, Gotham-Ultra, Gotham-Bold, Gotham-Medium,
+   Gotham-Book, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+   "Segoe UI Symbol", "Noto Color Emoji";
+
+// 1.2 Colors
+@white: #ffffff;
+@white-grey: #eeeded;
+@black: #000000;
+@grey: #b4b3b3;
+@grey-dark: #5f5f5f;
+@primary-color: #0a4df5;
+@primary-color-hover: #073fca;
+
+// 1.3 Border color
+@border-color-base: @primary-color;
+
+// 1.4 Form
+@form-item-margin-bottom: 12px;
+@form-vertical-label-padding: 0 0 4px;
+
+// 1.5 Input
+@input-height-base: 50px;
+@input-color: @black;
+@box-shadow-color: #ffe0e1;
+@input-placeholder-color: color(~`colorPalette("@{grey}", 4) `);
+@input-border-color: color(~`colorPalette("@{grey}", 4) `);
+
+// 1.6 Select
+@select-item-selected-bg: @grey;
+@select-item-active-bg: @grey;
+@select-item-hover-bg: color(~`colorPalette("@{grey}", 4) `);
+@select-border-color: color(~`colorPalette("@{primary-color}", 4) `);
+
+// 1.7 Checkbox
+@checkbox-size: @font-size-base + 4;
+
+// 1.8 Radio
+@radio-size: @font-size-base + 4;
+
+// 1.9 Buttons
+@btn-disable-color: @white;
+@btn-disable-bg: color(~`colorPalette("@{primary-color}", 4) `);
+@btn-disable-border: color(~`colorPalette("@{primary-color}", 4) `);
+@btn-height-base: @input-height-base;
+
+// 1.10 PageHeader
+@page-header-padding: 0;
+@page-header-padding-vertical: 10px;
+
+// 1.11 Collapse
+@collapse-header-padding: 12px 0;
+@collapse-header-padding-extra: 0;
+@collapse-header-bg: @white;
+@collapse-content-bg: @white;
+
+// 1.12 Card
+@card-border-radius: 40px;
+@card-border-color: #b4b3b3;
+
+// 1.13 Layout
+@layout-base: 480px;
+@layout-header-background: #f3f3f3;
+@layout-body-background: @layout-header-background;
+@layout-header-height: 56px;
+@layout-content: 0 18px;
+@layout-header-padding: 0;
+@layout-footer-padding: 0;
+
+// 1.14 Global
+html,
+body {
+   background-color: @layout-body-background;
+   --primary-color: @primary-color;
+   --input-color: @input-color;
+   --primary-color-hover: @primary-color-hover;
+   --box-shadow-color: @box-shadow-color;
+   --cart-box-color: @box-shadow-color;
+   font-family: "Gotham-Book";
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+a {
+   color: var(--primary-color);
+}
+::-webkit-scrollbar {
+   display: none;
+}
+.text-important {
+   color: var(--primary-color);
+}
+
+.capitalize {
+   text-transform: capitalize;
+}
+
+.center-middle {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.text-center {
+   text-align: center;
+   display: block;
+}
+
+.desc {
+   color: @grey-dark;
+}
+.width-cover {
+   width: 80%;
+}
+
+.h-100 {
+   height: 100vh;
+}
+
+.w-100 {
+   width: 100%;
+}
+
+.action {
+   cursor: pointer;
+}
+
+.ant-form-item-label {
+   label {
+      font-size: @font-size-base - 2;
+   }
+}
+.ant-form-item-explain {
+   margin-top: 5px;
+   margin-bottom: 5px;
+   text-align: left;
+   font-size: @font-size-base - 4;
+}
+.ant-btn.ant-input-search-button,
+.ant-picker-range,
+.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+   border-color: @grey;
+}
+
+// 2. Components
+// 2.1 Login
+.ant-layout {
+   .logo {
+      color: #f3f3f3;
+      font-size: 30px;
+      text-align: center;
+      font-family: "Gotham-Bold";
+      margin-top: 20px;
+      margin-bottom: 20px;
+   }
+}
+
+// 3. Antd
+// 3.1  Layout
+.ant-menu-dark.ant-menu-submenu-popup {
+   .ant-menu-sub {
+      background-color: var(--primary-color);
+      .ant-menu-item-active {
+         background-color: var(--primary-color-hover);
+      }
+   }
+   .ant-menu-item-only-child.ant-menu-item-selected {
+      background-color: var(--primary-color-hover);
+   }
+}
+
+.ant-layout {
+   &.splashscreen {
+      height: 100vh;
+   }
+   .ant-content {
+      background-color: @white;
+   }
+   .ant-layout-header,
+   .site-layout-background,
+   .site-content {
+      background-color: @white;
+      position: relative;
+   }
+   .site-header {
+      padding: 0px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding-right: 15px;
+   }
+   .site-main {
+      display: flex;
+      flex-direction: column;
+   }
+   .site-content {
+      display: flex;
+      flex: 1;
+   }
+   .ant-layout-footer {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      font-size: 11px;
+   }
+   .ant-menu-submenu-selected {
+      background-color: var(--primary-color-hover);
+   }
+   .ant-layout-sider {
+      .ant-layout-sider-children {
+         background-color: var(--primary-color);
+
+         .ant-menu {
+            background-color: var(--primary-color);
+            &.ant-menu-inline {
+               li {
+                  margin-bottom: 0;
+                  margin-top: 0;
+                  height: 48px;
+                  line-height: 48px;
+                  .ant-menu-submenu-title {
+                     height: 48px;
+                     line-height: 48px;
+                     margin-top: 0;
+                  }
+               }
+            }
+            .ant-menu-submenu-vertical.ant-menu-submenu-open,
+            .ant-menu-item:hover {
+               background-color: var(--primary-color-hover);
+               .anticon {
+                  color: @white;
+               }
+            }
+            .ant-menu-item-selected {
+               background-color: var(--primary-color-hover);
+            }
+         }
+      }
+   }
+   .ant-layout-sider-trigger {
+      background-color: var(--primary-color-hover);
+   }
+   .ant-pagination-disabled:hover button {
+      border: 1px solid rgba(0, 0, 0, 0.25);
+   }
+   .ant-pagination-item {
+      border-color: rgba(0, 0, 0, 0.25);
+      &:hover,
+      &.ant-pagination-item-active {
+         border-color: @primary-color;
+      }
+   }
+   .ant-pagination-item-link {
+      border: 1px solid rgba(0, 0, 0, 0.25);
+   }
+}
+
+// PopOver
+
+.ant-popover {
+   &.ant-popover-placement-bottomRight ul {
+      border-right: 0;
+      li {
+         line-height: 28px;
+         padding-left: 10px;
+         padding-right: 10px;
+         height: auto;
+         a {
+            font-size: @font-size-base - 3;
+         }
+      }
+   }
+   .ant-popover-inner-content {
+      h5 {
+         line-height: 24px;
+         cursor: pointer;
+         &:hover {
+            color: @primary-color;
+         }
+      }
+   }
+}
+
+//Tabel
+.ant-layout {
+   .ant-table-cell {
+      font-size: @font-size-base - 2;
+      padding-top: 10px;
+      padding-bottom: 10px;
+   }
+
+}
+
+.small-form {
+   input,
+   .ant-select {
+      font-size: @font-size-base - 4;
+   }
+   .ant-input-search-button {
+      height: 42px;
+   }
+   .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+      height: 45px;
+   }
+   .ant-select-single .ant-select-selector .ant-select-selection-item,
+   .ant-select-single .ant-select-selector .ant-select-selection-placeholder {
+      line-height: 44px;
+   }
+}
+.ant-select-item-option-active,
+.ant-select-item-option-selected {
+   background-color: #e8e8e8 !important;
+}
+
+.ant-tabs-left {
+   .ant-tabs-nav {
+      padding-top: 15px;
+   }
+   .ant-tabs-content-holder {
+      padding-top: 15px;
+      padding-right: 20px;
+   }
+   .ant-tabs-tab-btn {
+      font-size: @font-size-base - 2;
+   }
+   .ant-tabs-tab {
+      margin-bottom: 10px !important;
+   }
+}
+.ant-select-multiple .ant-select-selection-search {
+   margin-top: 0;
+}
+.ant-modal-footer button:first-child {
+   span {
+      color: @primary-color;
+   }
+}
+.ant-modal-footer button {
+   min-width: 100px;
+}
+.ant-btn-sm {
+   height: 40px;
+   padding-left: 15px;
+   padding-right: 15px;
+   font-size: 12px;
+   &:not(.ant-btn-primary) {
+      color: @primary-color;
+   }
+}
+.ant-form-item {
+   margin-bottom: 8px;
+}
+.ant-form-item-label {
+   padding-bottom: 0px !important;
+}
+.ant-form-item-explain {
+   margin-top: 0;
+}
+
+// 5. Responsive
+// 5.1  Global
+
+@media only screen and (max-width: 480px) {
+   .ant-layout {
+   }
+}

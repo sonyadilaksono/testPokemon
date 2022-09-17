@@ -1,0 +1,252 @@
+@import '~antd/dist/antd.less';
+
+@primary-color:rgb(239, 112, 0);
+
+html,
+body {
+  --primary-color: @primary-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-right: 0!important;
+}
+
+.App {
+  text-align: center;
+}
+
+
+.ant-layout {
+  min-height:100vh;
+  .ant-card-grid.p-none.detailPokemon{
+    min-height: 91vh;
+  }
+  .ant-layout-header{min-height: 9vh;}
+  .Logo{
+  color: @primary-color;
+  font-weight: 500;
+  text-align: center;
+  font-size: 20px;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.ant-card span strong{
+  font-size: 15px;
+  text-transform: capitalize;
+}
+.ant-card-grid .pokemon-nickname strong{
+  text-transform: uppercase;
+  font-size: 20px;
+    display: flex;
+    padding: 10px 15px 0 15px;
+}
+.ant-card-grid .pokemon-name strong{
+  font-size: 18px;
+  display: flex;
+  padding: 0px 15px;
+  font-weight: normal;
+}
+.ant-card-body .pokebag{
+  min-height: 130px;
+}
+
+.pokebag .pokedelete{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  margin-top: 10px;
+margin-left: 15px;
+}
+.pokebag svg{
+}
+
+.ant-card-grid-hoverable{
+  //cursor: pointer;
+}
+.grass {
+  background-color: #08a42a;
+  color: white;
+}
+.poison {
+  background-color: #630277;
+  color: white;
+}
+.fire {
+  background-color: #a20033;
+  color: white;
+}
+.flying {
+  background-color: #00ffee;
+  color: black;
+}
+.water {
+  background-color: #002fff;
+  color: white;
+}
+.bug {
+  background-color: #d0ff00;
+  color: rgb(0, 0, 0);
+}
+.normal {
+  background-color: #ba7600;
+  color: rgb(255, 255, 255);
+}
+.ground{
+  background-color: #402902;
+  color: rgb(255, 255, 255);
+}
+.ant-typography{
+  text-transform:capitalize ;
+}
+.fairy{
+  background-color: #dd00e4;
+  color: rgb(255, 255, 255);
+
+}
+.ghost{
+  background-color: #000;
+  color: rgb(255, 255, 255);
+}
+.fighting{
+  background-color: rgb(155, 218, 255);
+  color: rgb(#000);
+}
+.psychic{  background-color: rgb(238, 0, 255);
+  color: rgb(#fff);}
+  .electric{background-color: rgb(255, 234, 0);
+    color: rgb(#000);}
+    .steel{background-color: rgb(234, 255, 253);
+      color: rgb(rgb(0, 0, 0));}
+
+      .stage {
+        position: fixed;
+        display: flex;
+        bottom: 0;
+        margin: 0 auto;
+        left: -10;
+    }
+    .box {
+        align-self: flex-end;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        margin: 0 auto 0 auto;
+        transform-origin: bottom;
+    }
+    .bounce-7 {
+        animation-name: bounce-7;
+        animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+    }
+    @keyframes bounce-7 {
+        0%   { transform: scale(1,1)      translateY(0); }
+        10%  { transform: scale(1.1,.9)   translateY(0); }
+        30%  { transform: scale(.9,1.1)   translateY(-100px); }
+        50%  { transform: scale(1.05,.95) translateY(0); }
+        57%  { transform: scale(1,1)      translateY(-7px); }
+        64%  { transform: scale(1,1)      translateY(0); }
+        100% { transform: scale(1,1)      translateY(0); }
+    }
+    .pokeball{
+      height: auto;
+      border: none;
+      background-color: white;
+      cursor: pointer;
+      margin-left: -5em;
+    }
+    .pokeball img{
+    text-align: center;
+    }
+    .ant-layout-content{
+      height: 100%;
+    }
+
+
+
+    .white-popup .closeButton{
+      margin:0 10px;
+    }
+
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.layer [data-rsbs-overlay]{
+  width: 480px!important;
+  margin: 0 auto;
+  padding: 15px 15px 25px 15px;
+  height: auto;
+}
+:root {
+  --rsbs-backdrop-bg: rgba(0, 0, 0, 0.2);
+  --rsbs-bg: #fff;
+  --rsbs-handle-bg: hsla(0, 0%, 0%, 0.14);
+  --rsbs-max-w: auto;
+  --rsbs-ml: 0;
+  --rsbs-mr: 0;
+  --rsbs-pr: 0;
+  --rsbs-overlay-rounded: 16px;
+}
+[data-rsbs-backdrop] {width: 480px!important; margin: 0 auto;}
+
+
+[data-rsbs-scroll]{
+  overflow: none!important;
+}
+.getPokemonSukses{
+  padding: 15px 20px;
+}
+
+.getPokemonSukses span{
+  margin: 5px 0;
+}
+.getPokemonSukses .anticon-user{
+  margin-right: 10px;
+}
+
+.pokebag .ant-image{
+  width: 100px;
+      height: 100px;
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+}
+.afterSuccess{
+margin: 0 auto;
+text-align: center;
+
+}
+
+.afterSuccess button{
+  margin: 0 10px;
+}
